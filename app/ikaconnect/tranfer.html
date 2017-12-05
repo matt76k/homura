@@ -21,8 +21,10 @@
             var userAgent = navigator.userAgent.toLowerCase();
             // iPhone端末ならアプリを開くかApp Storeを開く。
             if (userAgent.search(/iphone|ipad|ipod/) > -1) {
-                launch_frame.location.href = IOS_SCHEME + '://?';
-
+                location.href = IOS_SCHEME + '://?' + pair;
+                setTimeout(function() {
+                    location.href = IOS_STORE;
+                }, 500);
             }
             // Android端末ならアプリを開くかGoogle Playを開く。
             else if (userAgent.search(/android/) > -1) {
