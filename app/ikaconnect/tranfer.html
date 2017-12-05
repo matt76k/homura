@@ -11,7 +11,7 @@
     <script>
         // アプリを開く。アプリがインストールされていなければサイトを開く。
         function launchApp() {
-            var pair=location.search.substring(1).split('?');
+            var pair=location.search.substring(1).split('&');
             var IOS_SCHEME = 'ikaConnect';
             var IOS_STORE = 'https://itunes.apple.com/jp/app/%E3%82%A4%E3%82%AB%E3%82%B3%E3%83%8D%E3%82%AF%E3%83%88/id1296185485?mt=8';
             var ANDROID_SCHEME = 'AndroidのURLスキーム';
@@ -21,7 +21,7 @@
             var userAgent = navigator.userAgent.toLowerCase();
             // iPhone端末ならアプリを開くかApp Storeを開く。
             if (userAgent.search(/iphone|ipad|ipod/) > -1) {
-                location.href = IOS_SCHEME + '://?' + pair;
+                location.href = IOS_SCHEME + '://' + pair[0] + '?' + pair[1];
                 setTimeout(function() {
                     location.href = IOS_STORE;
                 }, 500);
