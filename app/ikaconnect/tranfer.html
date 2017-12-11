@@ -28,7 +28,7 @@
             }
             // Android端末ならアプリを開くかGoogle Playを開く。
             else if (userAgent.search(/android/) > -1) {
-                document.location = "intent://unk#Intent;package=tech.homura.splatoon2;action=view;category=browsable;scheme=ika;end";
+                document.location = "intent://#Intent;scheme=ika;package=tech.homura.splatoon2;end";
             }
             // その他・不明・PCなどの場合はサイトを開く。
             else {
